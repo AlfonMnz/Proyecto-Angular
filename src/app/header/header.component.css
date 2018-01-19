@@ -35,3 +35,11 @@
 .busqueda{
   padding-top: 20px;
 }
+.menu button{
+  border: 1px solid #C3002F;
+  color: #C3002F;
+
+}
+.menu button:hover{
+  color: white;
+}
