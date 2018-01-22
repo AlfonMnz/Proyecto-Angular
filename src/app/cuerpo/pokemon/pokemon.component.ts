@@ -13,6 +13,7 @@ export class PokemonComponent implements OnInit {
   private pokemonName: any;
   private imagen: any;
   private name: any;
+  private id: any;
 
   constructor(private peticion: PeticionService, private route: ActivatedRoute) {
 
@@ -37,8 +38,8 @@ export class PokemonComponent implements OnInit {
   mostrarDatos(datos) {
     this.imagen = datos.sprites.front_default;
     console.log(this.imagen);
-    this.name = datos.name;
-
+    this.name = datos.name.charAt(0).toUpperCase() + datos.name.slice(1);
+    this.id = datos.id;
 
   }
 }

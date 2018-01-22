@@ -1,10 +1,17 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-12">
-      <div class="datos">
-        <img src="{{imagen}}" alt="">
-        <p>{{name}}</p>
-      </div>
-    </div>
+  <div class="row contenedor">
+    <div class="col-12 col-md-4"><img src="{{imagen}}" alt=""></div>
+    <div class="col-12 col-md-8"><h1>{{name}} ---> {{id}}</h1></div>
+
+    <!--      <img src="{{imagen}}" alt="">
+          <p> Nombre = {{name}}</p>
+          <h1>Movimientos</h1>
+          <ul class="movimientos">
+            <li *ngFor="let movimiento of this.pokemonData.moves">
+              <a [routerLink]="['/movimiento/'+ movimiento.move.name]">{{movimiento.move.name}}</a>
+            </li>
+          </ul>-->
   </div>
 </div>
+
+

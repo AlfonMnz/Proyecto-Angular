@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-movimiento',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovimientoComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
   }
 
+  ngOnInit() {
+    console.log('Cargado movimiento component');
+
+
+  }
+
+//  loadData() {
+//    this.peticion.pokemon(this.pokemonName).subscribe(data => {
+//      this.pokemonData = data;
+//      console.log('Datos pokemon', this.pokemonData);
+//      this.mostrarDatos(this.pokemonData);
+//    });
+//  }
 }
+
+

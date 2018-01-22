@@ -12,11 +12,12 @@ import {PokemonComponent} from './cuerpo/pokemon/pokemon.component';
 import {PeticionService} from './peticion.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-import { MovimientoComponent } from './cuerpo/movimiento/movimiento.component';
+import {MovimientoComponent} from './cuerpo/movimiento/movimiento.component';
 
 const appRoutes: Routes = [
   {path: '', component: InicioComponent},
-  {path: 'pokemon/:pokename', component: PokemonComponent}
+  {path: 'pokemon/:pokename', component: PokemonComponent},
+  {path: 'movimiento/:pokemovimiento', component: MovimientoComponent}
 ];
 
 @NgModule({

@@ -1,6 +1,29 @@
-.datos {
+.contenedor {
   border-radius: 5px;
   border: solid black;
-  width: 50%;
-  height: 1500px;
+  width: 100%;
+  min-height: 150px;
 }
+
+.contenedor ul {
+  list-style: none;
+}
+.contenedor ul li{
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+.contenedor ul li a{
+  text-decoration: none;
+
+}
+.movimientos{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.datos{
+  width: 200px;
+  height: 100px;
+  background-color: darkcyan;
+}
+
