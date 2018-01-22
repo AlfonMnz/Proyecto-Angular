@@ -11,6 +11,8 @@ import {InicioComponent} from './cuerpo/inicio/inicio.component';
 import {PokemonComponent} from './cuerpo/pokemon/pokemon.component';
 import {PeticionService} from './peticion.service';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import { MovimientoComponent } from './cuerpo/movimiento/movimiento.component';
 
 const appRoutes: Routes = [
   {path: '', component: InicioComponent},
@@ -25,11 +27,13 @@ const appRoutes: Routes = [
     FooterComponent,
     MenuLateralComponent,
     InicioComponent,
-    PokemonComponent
+    PokemonComponent,
+    MovimientoComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: false} // <-- debugging purposes only

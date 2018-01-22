@@ -11,6 +11,8 @@ export class PokemonComponent implements OnInit {
 
   pokemonData: any;
   private pokemonName: any;
+  private imagen: any;
+  private name: any;
 
   constructor(private peticion: PeticionService, private route: ActivatedRoute) {
 
@@ -28,6 +30,15 @@ export class PokemonComponent implements OnInit {
     this.peticion.pokemon(this.pokemonName).subscribe(data => {
       this.pokemonData = data;
       console.log('Datos pokemon', this.pokemonData);
+      this.mostrarDatos(this.pokemonData);
     });
+  }
+
+  mostrarDatos(datos) {
+    this.imagen = datos.sprites.front_default;
+    console.log(this.imagen);
+    this.name = datos.name;
+
+
   }
 }
