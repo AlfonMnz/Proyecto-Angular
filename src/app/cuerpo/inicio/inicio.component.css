@@ -4,9 +4,10 @@
   text-align: center;
 
 }
-h1 {
-  animation-duration: 3s;
+.titulo {
+  animation-duration: 1s;
   animation-name: slidein;
+  font-family: 'Kavivanar', cursive;
 }
 
 @keyframes slidein {
@@ -20,4 +21,6 @@ h1 {
     width: 100%;
   }
 }
-
+.titulo a{
+  text-decoration: none;
+}

@@ -32,14 +32,17 @@
   transform: scale(1.1);
 }
 
-.busqueda{
+.busqueda {
   padding-top: 20px;
 }
-.menu button{
+
+.menu button {
   border: 1px solid #C3002F;
   color: #C3002F;
 
 }
-.menu button:hover{
+
+.menu button:hover {
   color: white;
+  background-color: #C3002F;
 }
