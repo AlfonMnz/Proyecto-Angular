@@ -30,7 +30,7 @@
         <li>
           Tipos:
           <ul>
-            <li *ngFor="let tipo of tipos">{{tipo.type.name}}</li>
+            <li *ngFor="let tipo of tipos"><a [routerLink]="['/tipo/' + tipo.type.name]">{{tipo.type.name}}</a></li>
           </ul>
         </li>
       </ul>

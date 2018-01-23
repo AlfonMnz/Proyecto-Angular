@@ -28,4 +28,8 @@ export class PeticionService {
   movimientos(movimiento = 'splash'): Observable<any> {
     return this.http.get('https://pokeapi.co/api/v2/moves/' + movimiento.toLowerCase());
   }
+
+  tipos(tipo = 'flying'): Observable<any> {
+    return this.http.get('https://pokeapi.co/api/v2/type/' + tipo);
+  }
 }
