@@ -1,17 +1,39 @@
-<div class="container-fluid">
-  <div class="row contenedor">
-    <div class="col-12 col-md-4"><img src="{{imagen}}" alt=""></div>
-    <div class="col-12 col-md-8"><h1>{{name}} ---> {{id}}</h1></div>
+<div class="container-fluid contenedor">
+  <div class="row">
+    <div class="col-6 ">
+      <button type="button" class="btn btn-outline-info boton" [routerLink]="['/pokemon/' + anterior_nombre]">
+        {{anterior_nombre}}---{{anterior_id}}
+      </button>
+    </div>
+    <div class="col-6 ">
+      <button type="button" class="btn btn-outline-info boton" [routerLink]="['/pokemon/' + siguiente_nombre]">
+        {{siguiente_nombre}}---{{siguiente_id}}
 
-    <!--      <img src="{{imagen}}" alt="">
-          <p> Nombre = {{name}}</p>
-          <h1>Movimientos</h1>
-          <ul class="movimientos">
-            <li *ngFor="let movimiento of this.pokemonData.moves">
-              <a [routerLink]="['/movimiento/'+ movimiento.move.name]">{{movimiento.move.name}}</a>
-            </li>
-          </ul>-->
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <h1>{{name}}---> {{id}}</h1>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <img src="{{imagen}}" alt="">
+    </div>
+    <div class="col-6">
+      <ul>
+        <li>
+          Peso: {{peso}}
+        </li>
+        <li>
+          Altura: {{altura}}
+        </li>
+        <li>
+          Tipos:
+          <ul>
+            <li *ngFor="let tipo of tipos">{{tipo.type.name}}</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
-
-

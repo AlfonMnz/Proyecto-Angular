@@ -21,6 +21,10 @@ export class PeticionService {
     return this.http.get('https://pokeapi.co/api/v2/pokemon/' + pokemon.toLowerCase());
   }
 
+  id(id = '1'): Observable<any> {
+    return this.http.get('https://pokeapi.co/api/v2/pokemon/' + id.toString());
+  }
+
   movimientos(movimiento = 'splash'): Observable<any> {
     return this.http.get('https://pokeapi.co/api/v2/moves/' + movimiento.toLowerCase());
   }
