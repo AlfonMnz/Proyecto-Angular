@@ -10,6 +10,8 @@ import {PeticionService} from '../../peticion.service';
 export class TipoComponent implements OnInit {
   private poketype: any;
   private pokemondata: any;
+  private nombre: any;
+  private x2damage: any;
 
   constructor(private peticion: PeticionService, private route: ActivatedRoute) {
   }
@@ -27,6 +29,15 @@ export class TipoComponent implements OnInit {
     this.peticion.tipos(this.poketype).subscribe(data => {
       this.pokemondata = data;
       console.log(this.pokemondata);
+      this.mostrarDatos(this.pokemondata);
     });
+  }
+
+  mostrarDatos(datos) {
+    this.nombre = datos.names[4].name;
+    console.log(this.nombre);
+    console.log(datos);
+    this.x2damage = datos.damage_relations.double_damage_from;
+    console.log(datos.damage_relations);
   }
 }

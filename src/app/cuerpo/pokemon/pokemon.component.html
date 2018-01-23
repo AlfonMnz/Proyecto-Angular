@@ -22,6 +22,9 @@
     <div class="col-6">
       <ul>
         <li>
+
+        </li>
+        <li>
           Peso: {{peso}}
         </li>
         <li>
@@ -32,6 +35,9 @@
           <ul>
             <li *ngFor="let tipo of tipos"><a [routerLink]="['/tipo/' + tipo.type.name]">{{tipo.type.name}}</a></li>
           </ul>
+        </li>
+        <li>
+
         </li>
       </ul>
     </div>
