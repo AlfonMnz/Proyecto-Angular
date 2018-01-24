@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
+declare var jquery: any;
+declare var $: any;
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,6 +11,10 @@ import {Component, OnInit} from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   searchParam = '';
+  private mostrarPoke = true;
+  private mostrarType = true;
+  searchtype = '';
+
 
   constructor() {
   }
@@ -15,4 +22,15 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  mostrarPokemon() {
+    // language=JQuery-CSS
+    this.mostrarPoke = false;
+    this.mostrarType = true;
+
+  }
+
+  mostrarTipo() {
+    this.mostrarType = false;
+    this.mostrarPoke = true;
+  }
 }

@@ -14,8 +14,8 @@
 }
 
 .menu li {
-  float: left;
-  margin-right: 100px;
+  display: inline-block;
+  margin-right: 70px;
   margin-top: 25px;
 }
 
@@ -34,6 +34,7 @@
 
 .busqueda {
   padding-top: 20px;
+  max-width: 30%;
 }
 
 .menu button {
@@ -45,4 +46,12 @@
 .menu button:hover {
   color: white;
   background-color: #C3002F;
+}
+
+.menu {
+
+}
+
+#pokemon {
+  max-width: 30%;
 }

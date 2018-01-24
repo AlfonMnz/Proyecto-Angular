@@ -1,13 +1,14 @@
+<script src="../peticion.service.spec.ts"></script>
 <div class="container-fluid">
   <div class="header row">
-    <div class="col-3">
+    <div class="col-1">
       <img class="mr-3"
            src="https://secure.gravatar.com/blavatar/846bf1c3a420a68c0c091f5bce44594c?s=50&d=https%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwpcom-gray-white.png"
            alt="">
       <img src="assets/img/Sin título-1.png" alt="">
     </div>
 
-    <div class="col-9 menu">
+    <div class="col-11 menu">
       <nav>
         <ul>
           <li><a [routerLink]="['/']">Inicio</a></li>
@@ -15,13 +16,52 @@
           <li><a href="#">Idioma</a></li>
         </ul>
       </nav>
-      <nav class="busqueda navbar navbar-light">
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Pokemon" name="Search" [(ngModel)]="searchParam" aria-label="Search"
-                 id="buscadorPokemon">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" [routerLink]="['/pokemon/' + searchParam]">Search</button>
-        </form>
-      </nav>
+      <div id="pokemon" [hidden]="mostrarPoke">
+        <nav class="busqueda navbar navbar-light">
+
+          <form class="form-inline">
+
+            <input class="form-control mr-sm-2" type="search" placeholder="Pokemon" name="Search"
+                   [(ngModel)]="searchParam" aria-label="Search"
+                   id="buscadorPokemon">
+            <button class="btn btn-outline my-2 my-sm-0" type="submit" [routerLink]="['/pokemon/' + searchParam]">
+              pokemon
+            </button>
+
+
+          </form>
+        </nav>
+      </div>
+      <div id="tipo" [hidden]="mostrarType">
+        <nav class="busqueda navbar navbar-light">
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="type" name="Search"
+                   [(ngModel)]="searchtype" aria-label="Search"
+                   id="buscadortype">
+            <button class="btn btn-outline my-2 my-sm-0" type="submit"
+                    [routerLink]="['/tipo/' + searchtype]">
+              tipo
+            </button>
+          </form>
+        </nav>
+      </div>
+
+      <div class="btn-group busqueda">
+        <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false">
+          A buscar
+        </button>
+        <div class="dropdown-menu busqueda">
+          <a class="dropdown-item" (click)="mostrarPokemon()">Pokemon</a>
+          <a class="dropdown-item" (click)="mostrarTipo()">Tipo</a>
+          <a class="dropdown-item" href="#">Movimientos</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </div>

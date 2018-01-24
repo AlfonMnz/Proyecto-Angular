@@ -1,12 +1,12 @@
 <div class="container-fluid contenedor">
   <div class="row">
     <div class="col-6 ">
-      <button type="button" class="btn btn-outline-info boton" [routerLink]="['/pokemon/' + anterior_nombre]">
+      <button *ngIf="anterior_id != 0" type="button" class="btn btn-outline-info boton" [routerLink]="['/pokemon/' + anterior_nombre]">
         {{anterior_nombre}}---{{anterior_id}}
       </button>
     </div>
     <div class="col-6 ">
-      <button type="button" class="btn btn-outline-info boton" [routerLink]="['/pokemon/' + siguiente_nombre]">
+      <button *ngIf="siguiente_id != 0" type="button" class="btn btn-outline-info boton" [routerLink]="['/pokemon/' + siguiente_nombre]">
         {{siguiente_nombre}}---{{siguiente_id}}
 
       </button>

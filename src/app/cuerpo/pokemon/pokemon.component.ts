@@ -17,8 +17,8 @@ export class PokemonComponent implements OnInit {
   private peso: number;
   private altura: any;
   private tipos: any;
-  private siguiente: any;
-  private anterior: any;
+  private siguiente = {name: '', id: 0};
+  private anterior = {name: '', id: 0};
   private anterior_nombre: any;
   private anterior_id: any;
   private siguiente_nombre: any;
@@ -46,27 +46,42 @@ export class PokemonComponent implements OnInit {
       this.peticion.id(this.pokemonData.id + 1).subscribe(data2 => {
         this.siguiente = data2;
         console.log('siguiente', this.siguiente);
+        this.mostrarDatosSiguiente(this.siguiente);
       });
       this.peticion.id(this.pokemonData.id + (-1)).subscribe(data3 => {
         this.anterior = data3;
         console.log('Anterior', this.anterior.id);
-        this.mostrarDatos(this.pokemonData);
+        this.mostrarDatosAnterior(this.anterior);
       });
+      this.mostrarDatos(this.pokemonData);
     });
   }
 
+  mostrarDatosSiguiente(datos) {
+    this.siguiente_nombre = datos.name;
+    this.siguiente_id = datos.id;
+
+  }
+
+
+
+
+
+
+  mostrarDatosAnterior(datos) {
+    this.anterior_nombre = datos.name;
+    this.anterior_id = datos.id;
+  }
+
   mostrarDatos(datos) {
-    this.imagen = datos.sprites.front_default;
+    this.imagen = this.pokemonData.sprites.front_default;
     console.log(this.imagen);
     this.name = datos.name.charAt(0).toUpperCase() + datos.name.slice(1);
     this.id = datos.id;
     this.peso = datos.weight;
     this.altura = datos.height;
     this.tipos = datos.types;
-    this.anterior_nombre = this.anterior.name;
-    this.anterior_id = this.anterior.id;
-    this.siguiente_nombre = this.siguiente.name;
-    this.siguiente_id = this.siguiente.id;
+
 
   }
 }

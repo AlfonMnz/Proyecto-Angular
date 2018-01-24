@@ -11,7 +11,7 @@ import {InicioComponent} from './cuerpo/inicio/inicio.component';
 import {PokemonComponent} from './cuerpo/pokemon/pokemon.component';
 import {PeticionService} from './peticion.service';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms' ;
 import {MovimientoComponent} from './cuerpo/movimiento/movimiento.component';
 import {TipoComponent} from './cuerpo/tipo/tipo.component';
 
