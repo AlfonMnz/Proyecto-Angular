@@ -1,14 +1,61 @@
 <script src="../peticion.service.spec.ts"></script>
 <div class="container-fluid">
   <div class="header row">
-    <div class="col-1">
+    <div class="col-3">
       <img class="mr-3"
            src="https://secure.gravatar.com/blavatar/846bf1c3a420a68c0c091f5bce44594c?s=50&d=https%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwpcom-gray-white.png"
            alt="">
       <img src="assets/img/Sin título-1.png" alt="">
     </div>
+    <div class="col-9">
+      <div>
+        <nav class="navbar navbar-expand-lg navbar-light menu">
 
-    <div class="col-11 menu">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/']">Inicio <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" (click)="mostrarPokemon()">Pokemon</a>
+                  <a class="dropdown-item" (click)="mostrarTipo()">Tipo</a>
+                  <a class="dropdown-item" href="#">Movimientos</a>
+                </div>
+              </li>
+            </ul>
+            <div id="pokemon" [hidden]="mostrarPoke">
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pokemon" name="pokemon"
+                       aria-label="Search"
+                       [(ngModel)]="searchParam">
+                <button class="btn btn-outline-danger my-2 my-sm-0 boton" type="submit"
+                        [routerLink]="['/pokemon/' + searchParam]">Buscar
+                </button>
+              </form>
+            </div>
+            <div id="tipo" [hidden]="mostrarType">
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Tipo" name="tipo" aria-label="Search"
+                       [(ngModel)]="searchtipo">
+                <button class="btn btn-outline-danger my-2 my-sm-0 boton" type="submit"
+                        [routerLink]="['/tipo/' + searchtipo]">Buscar
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!--<div class="col-11 menu">
       <nav>
         <ul>
           <li><a [routerLink]="['/']">Inicio</a></li>
@@ -62,7 +109,8 @@
       </div>
 
 
-    </div>
+    </div>-->
+
   </div>
 </div>
 

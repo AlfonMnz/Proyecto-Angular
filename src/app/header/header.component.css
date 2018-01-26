@@ -1,4 +1,4 @@
-.header {
+/*.header {
   background-color: aliceblue;
   height: 100px;
 }
@@ -54,4 +54,21 @@
 
 #pokemon {
   max-width: 30%;
+}*/
+
+.header{
+  background-color: aliceblue;
 }
+.menu{
+  background-color: aliceblue;
+
+}
+.menu li a{
+  color: #17A2B8;
+  margin-right: 50px;
+}
+.menu li a:hover{
+  transform: scale(1.5);
+  color: #C82333;
+}
+

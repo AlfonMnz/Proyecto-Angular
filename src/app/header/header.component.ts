@@ -11,7 +11,7 @@ declare var $: any;
 export class HeaderComponent implements OnInit {
 
   searchParam = '';
-  private mostrarPoke = true;
+  private mostrarPoke = false;
   private mostrarType = true;
   searchtype = '';
 
