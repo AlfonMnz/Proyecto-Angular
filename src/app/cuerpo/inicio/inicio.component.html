@@ -13,7 +13,11 @@
   </div>
   <div class="row">
     <div>
-
+      <ol>
+        <li *ngFor="let imagen of array_img">
+          <img src="{{imagen}}" alt="">
+        </li>
+      </ol>
     </div>
   </div>
 </div>

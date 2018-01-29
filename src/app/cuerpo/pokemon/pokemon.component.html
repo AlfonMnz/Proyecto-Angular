@@ -1,12 +1,18 @@
-<div class="container-fluid contenedor">
+<div *ngIf="!datos" class="text-center">
+  <img src="https://androidayuda.com/app/uploads/2016/07/pikachu.gif" alt="">
+</div>
+
+<div class="container-fluid contenedor" *ngIf="datos">
   <div class="row">
     <div class="col-6 ">
-      <button *ngIf="anterior_id != 0" type="button" class="btn btn-outline-info boton" [routerLink]="['/pokemon/' + anterior_nombre]">
+      <button *ngIf="anterior_id != 0" type="button" class="btn btn-outline-info boton"
+              [routerLink]="['/pokemon/' + anterior_nombre]">
         {{anterior_nombre}}---{{anterior_id}}
       </button>
     </div>
     <div class="col-6 ">
-      <button *ngIf="siguiente_id != 0" type="button" class="btn btn-outline-info boton" [routerLink]="['/pokemon/' + siguiente_nombre]">
+      <button *ngIf="siguiente_id != 0" type="button" class="btn btn-outline-info boton"
+              [routerLink]="['/pokemon/' + siguiente_nombre]">
         {{siguiente_nombre}}---{{siguiente_id}}
 
       </button>
@@ -17,7 +23,10 @@
   </div>
   <div class="row">
     <div class="col-6">
-      <img src="{{imagen}}" alt="">
+      <button type="button" class="btn btn-outline-info" (click)="cambiarShiny()" *ngIf="shiny">shyni</button>
+      <button type="button" class="btn btn-outline-primary" (click)="cambiarShiny()" *ngIf="!shiny">normal</button>
+      <img src="{{imagen}}" alt="" *ngIf="shiny">
+      <img src="{{imagen_shyni}}" alt="" *ngIf="!shiny">
     </div>
     <div class="col-6">
       <ul>
@@ -25,10 +34,10 @@
 
         </li>
         <li>
-          Peso: {{peso}}
+          Peso: {{peso}} kg
         </li>
         <li>
-          Altura: {{altura}}
+          Altura: {{altura}} km
         </li>
         <li>
           Tipos:

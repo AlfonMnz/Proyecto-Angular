@@ -26,7 +26,6 @@ export class HeaderComponent implements OnInit {
     // language=JQuery-CSS
     this.mostrarPoke = false;
     this.mostrarType = true;
-
   }
 
   mostrarTipo() {

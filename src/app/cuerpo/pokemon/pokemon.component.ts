@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {PeticionService} from '../../peticion.service';
 import {ActivatedRoute} from '@angular/router';
 
+declare var jquery: any;
+declare var $: any;
+
 @Component({
   selector: 'app-pokemon',
   templateUrl: './pokemon.component.html',
@@ -23,6 +26,9 @@ export class PokemonComponent implements OnInit {
   private anterior_id: any;
   private siguiente_nombre: any;
   private siguiente_id: any;
+  private imagen_shyni: any;
+  private shiny: boolean;
+  private datos = false;
   // private id_anterior: number;
   // private id_siguiente: number;
 
@@ -39,6 +45,7 @@ export class PokemonComponent implements OnInit {
   }
 
   loadData() {
+    this.datos = false;
     this.peticion.pokemon(this.pokemonName).subscribe(data => {
       this.pokemonData = data;
       console.log('Datos pokemon', this.pokemonData);
@@ -52,9 +59,12 @@ export class PokemonComponent implements OnInit {
         this.anterior = data3;
         console.log('Anterior', this.anterior.id);
         this.mostrarDatosAnterior(this.anterior);
+        this.datos = true;
       });
       this.mostrarDatos(this.pokemonData);
+
     });
+
   }
 
   mostrarDatosSiguiente(datos) {
@@ -62,10 +72,6 @@ export class PokemonComponent implements OnInit {
     this.siguiente_id = datos.id;
 
   }
-
-
-
-
 
 
   mostrarDatosAnterior(datos) {
@@ -81,7 +87,14 @@ export class PokemonComponent implements OnInit {
     this.peso = datos.weight;
     this.altura = datos.height;
     this.tipos = datos.types;
+    this.imagen_shyni = datos.sprites.front_shiny;
 
+
+
+  }
+
+  cambiarShiny() {
+    this.shiny = !this.shiny;
 
   }
 }
