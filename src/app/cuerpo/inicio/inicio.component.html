@@ -11,13 +11,17 @@
     </h2>
     <h3><a href="https://andylucas.000webhostapp.com">Espero que te guste</a></h3>
   </div>
-  <div class="row">
+  <div class="row" *ngIf="cargado">
     <div>
-      <ol>
+      <ol class="lista-muestra">
         <li *ngFor="let imagen of array_img">
-          <img src="{{imagen}}" alt="">
+          <a [routerLink]="['/pokemon/' + imagen.id]"><img src="{{imagen.imagen}}" alt=""></a>
         </li>
       </ol>
     </div>
   </div>
+  <div *ngIf="!cargado">
+    <img src="https://www.pokemon-go-map.com/images/maploading1.gif" alt="">
+  </div>
+  <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000" (scrolled)="onScroll()"></div>
 </div>

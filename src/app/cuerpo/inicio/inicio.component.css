@@ -1,9 +1,10 @@
 
-.titulo{
+.titulo {
   display: inline;
   text-align: center;
 
 }
+
 .titulo {
   animation-duration: 1s;
   animation-name: slidein;
@@ -21,6 +22,20 @@
     width: 100%;
   }
 }
-.titulo a{
+
+.titulo a {
   text-decoration: none;
+}
+
+.lista-muestra {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+
+}
+
+.lista-muestra li {
+  border-radius: 25px;
+  border: solid black 2px;
+  margin: 5px;
 }

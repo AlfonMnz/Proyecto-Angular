@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import {RouterModule, Routes} from '@angular/router';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
@@ -38,6 +38,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    InfiniteScrollModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: false} // <-- debugging purposes only
