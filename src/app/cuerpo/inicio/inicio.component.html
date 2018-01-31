@@ -15,11 +15,43 @@
     <div>
       <ol class="lista-muestra">
         <li *ngFor="let imagen of array_img">
-          <a [routerLink]="['/pokemon/' + imagen.id]"><img src="{{imagen.imagen}}" alt=""></a>
+          <a data-toggle="modal" data-target="#exampleModalCenter" (click)="loadData(imagen.id)"><img
+            src="{{imagen.imagen}}" alt=""></a>
         </li>
       </ol>
     </div>
   </div>
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+       aria-hidden="true">
+    <div *ngIf="!cargado_modal" class="text-center">
+      <img src="https://78.media.tumblr.com/81fe86f8dabd50c5547e86645ad66ead/tumblr_nemzf0zzgG1s2i16to1_500.gif"
+           alt="">
+    </div>
+    <div *ngIf="cargado_modal">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{nombreModal}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="{{imagenModal}}" alt="" class="text-center">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/pokemon/'+nombreModal]" >
+              ir a pokedex
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div *ngIf="!cargado">
     <img src="https://www.pokemon-go-map.com/images/maploading1.gif" alt="">
   </div>

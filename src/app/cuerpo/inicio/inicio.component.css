@@ -30,6 +30,7 @@
 .lista-muestra {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   list-style: none;
 
 }
@@ -37,5 +38,4 @@
 .lista-muestra li {
   border-radius: 25px;
   border: solid black 2px;
-  margin: 5px;
 }

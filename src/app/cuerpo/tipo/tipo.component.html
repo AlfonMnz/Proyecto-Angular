@@ -1,18 +1,27 @@
-<div class="container-fluid contenedor">
+<div *ngIf="!cargado" class="text-center">
+  <img src="https://androidayuda.com/app/uploads/2016/07/pikachu.gif" alt="">
+</div>
+<div  *ngIf="cargado" class="container-fluid contenedor">
   <div class="col-6">
     <div class="row">
       <h1>Tipo: {{nombre}}</h1>
     </div>
   </div>
-  <div class="col-6">
-    <div class="row">
+  <div>
+    <div class="col-6">
+      <div class="row">
 
-      <ul>
-        Fuerte contra:
-        <li *ngFor="let tipo of x2damage">
-          {{tipo.name}}
-        </li>
-      </ul>
+        <ul>
+          Débil contra:
+          <li *ngFor="let tipo of x05damage">
+            <a [routerLink]="['/tipo/'+tipo.name]">{{tipo.name}}</a>
+          </li>
+          Fuerte contra:
+          <li *ngFor="let tipo of x2damage">
+            <a [routerLink]="['/tipo/'+tipo.name]">{{tipo.name}}</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

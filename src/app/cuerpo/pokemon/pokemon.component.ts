@@ -27,7 +27,7 @@ export class PokemonComponent implements OnInit {
   private siguiente_nombre: any;
   private siguiente_id: any;
   private imagen_shyni: any;
-  private shiny = false;
+  private shiny = true;
   private datos = false;
   // private id_anterior: number;
   // private id_siguiente: number;
