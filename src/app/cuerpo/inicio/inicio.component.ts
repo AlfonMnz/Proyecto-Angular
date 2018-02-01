@@ -58,9 +58,6 @@ export class InicioComponent implements OnInit {
     this.cerrar_modal = false;
   }
 
-  cerrarModal() {
-    this.cerrar_modal = true;
-  }
 
 
 }
