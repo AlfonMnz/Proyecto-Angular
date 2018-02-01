@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PeticionService} from '../../peticion.service';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import {ActivatedRoute, Router, RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -15,9 +16,10 @@ export class InicioComponent implements OnInit {
   private pokemondata: any;
   private nombreModal: any;
   private imagenModal: any;
+  private cerrar_modal = false;
 
 
-  constructor(private peticion: PeticionService) {
+  constructor(private peticion: PeticionService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
@@ -53,6 +55,11 @@ export class InicioComponent implements OnInit {
     console.log(datos);
     this.imagenModal = datos.sprites.front_default;
     this.cargado_modal = true;
+    this.cerrar_modal = false;
+  }
+
+  cerrarModal() {
+    this.cerrar_modal = true;
   }
 
 

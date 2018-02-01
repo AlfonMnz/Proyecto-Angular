@@ -51,4 +51,19 @@
       </ul>
     </div>
   </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="dropdown">
+        <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+          Movimientos
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li *ngFor="let movimiento of movimientos">
+            <a [routerLink]="['/movimiento/'+movimiento.move.name]">{{movimiento.move.name}}</a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

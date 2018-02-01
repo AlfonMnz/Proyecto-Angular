@@ -1,7 +1,7 @@
 <div *ngIf="!cargado" class="text-center">
   <img src="https://androidayuda.com/app/uploads/2016/07/pikachu.gif" alt="">
 </div>
-<div  *ngIf="cargado" class="container-fluid contenedor">
+<div *ngIf="cargado" class="container-fluid contenedor">
   <div class="col-6">
     <div class="row">
       <h1>Tipo: {{nombre}}</h1>
@@ -23,5 +23,11 @@
         </ul>
       </div>
     </div>
+  </div>
+  <div class="row lista">
+    <li *ngFor="let pokemon of pokemons">
+      <a data-toggle="modal" data-target="#exampleModalCenter">
+        <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.pokemon.url.slice(34, -1)}}.png' alt="">
+      </a>
   </div>
 </div>

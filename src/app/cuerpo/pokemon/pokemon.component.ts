@@ -29,6 +29,7 @@ export class PokemonComponent implements OnInit {
   private imagen_shyni: any;
   private shiny = true;
   private datos = false;
+  private movimientos: any;
   // private id_anterior: number;
   // private id_siguiente: number;
 
@@ -87,6 +88,8 @@ export class PokemonComponent implements OnInit {
     this.peso = datos.weight;
     this.altura = datos.height;
     this.tipos = datos.types;
+    this.movimientos = datos.moves;
+    console.log(datos.moves[1])
     this.imagen_shyni = datos.sprites.front_shiny;
 
 

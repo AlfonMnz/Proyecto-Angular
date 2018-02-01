@@ -14,6 +14,7 @@ export class TipoComponent implements OnInit {
   private x2damage: any;
   private x05damage: any;
   private cargado = false;
+  private pokemons: any;
 
   constructor(private peticion: PeticionService, private route: ActivatedRoute) {
   }
@@ -43,5 +44,7 @@ export class TipoComponent implements OnInit {
     console.log(datos.damage_relations);
     this.x2damage = datos.damage_relations.double_damage_to;
     this.cargado = true;
+    this.pokemons = datos.pokemon;
+    console.log(this.pokemons[0].pokemon.url);
   }
 }

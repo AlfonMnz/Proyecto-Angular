@@ -4,3 +4,14 @@
   max-width: 100%;
   min-height: 150px;
 }
+.lista{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+}
+.lista li{
+
+  border-radius: 25px;
+  border: solid black 2px;
+}
