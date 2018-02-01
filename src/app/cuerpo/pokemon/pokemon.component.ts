@@ -37,7 +37,7 @@ export class PokemonComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('Cargado pokemon component');
+    console.log('polla');
     this.route.params.subscribe(params => {
       this.pokemonName = params['pokename'];
       this.loadData();
