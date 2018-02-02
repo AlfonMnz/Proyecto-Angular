@@ -43,7 +43,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/pokemon/'+nombreModal]">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/pokemon/'+nombreModal]"
+                    (click)="cambiar_cargado_modal()">
               ir a pokedex
             </button>
           </div>

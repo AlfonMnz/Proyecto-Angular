@@ -11,7 +11,8 @@
   list-style: none;
 }
 .lista li{
-
+  min-height: 126px;
+  min-width: 126px;
   border-radius: 25px;
   border: solid black 2px;
 }

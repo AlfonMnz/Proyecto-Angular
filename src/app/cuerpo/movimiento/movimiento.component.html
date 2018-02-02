@@ -1,3 +1,22 @@
-<p>
-  movimiento works!
-</p>
+<div *ngIf="!datos" class="text-center">
+  <img src="https://androidayuda.com/app/uploads/2016/07/pikachu.gif" alt="">
+</div>
+<div *ngIf="datos" class="container-fluid contenedor">
+  <div class="row">
+    <div class="col-6">
+      <h1>{{nombre}}</h1>
+      <p>{{efecto}}</p>
+
+    </div>
+    <div class="col-6">
+      <h1>
+        Tipos
+      </h1>
+      <ul>
+        <li>
+          <a [routerLink]="['/tipo/'+tipos]"> {{tipos}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

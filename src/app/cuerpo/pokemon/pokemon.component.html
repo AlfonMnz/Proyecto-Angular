@@ -25,8 +25,21 @@
     <div class="col-6">
       <button type="button" class="btn btn-outline-info" (click)="cambiarShiny()" *ngIf="shiny">shyni</button>
       <button type="button" class="btn btn-outline-primary" (click)="cambiarShiny()" *ngIf="!shiny">normal</button>
+
       <img src="{{imagen}}" alt="" *ngIf="shiny">
       <img src="{{imagen_shyni}}" alt="" *ngIf="!shiny">
+      <div class="dropdown">
+        <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+          Movimientos
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li *ngFor="let movimiento of movimientos">
+            <a [routerLink]="['/movimiento/'+movimiento.move.name]">{{movimiento.move.name}}</a>
+          </li>
+        </div>
+      </div>
+
     </div>
     <div class="col-6">
       <ul>
@@ -49,21 +62,6 @@
 
         </li>
       </ul>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <div class="dropdown">
-        <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-          Movimientos
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li *ngFor="let movimiento of movimientos">
-            <a [routerLink]="['/movimiento/'+movimiento.move.name]">{{movimiento.move.name}}</a>
-          </li>
-        </div>
-      </div>
     </div>
   </div>
 </div>

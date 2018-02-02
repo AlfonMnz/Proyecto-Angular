@@ -15,6 +15,11 @@ export class TipoComponent implements OnInit {
   private x05damage: any;
   private cargado = false;
   private pokemons: any;
+  private array_pokemons = [];
+  private cargado_modal: any;
+  private nombreModal: any;
+  private imagenModal: any;
+  private cerrar_modal = false;
 
   constructor(private peticion: PeticionService, private route: ActivatedRoute) {
   }
@@ -46,5 +51,30 @@ export class TipoComponent implements OnInit {
     this.cargado = true;
     this.pokemons = datos.pokemon;
     console.log(this.pokemons[0].pokemon.url);
+    for (let i = 0; i <= this.pokemons.length; i++) {
+
+      this.array_pokemons.push({
+        id: this.pokemons[i].pokemon.url.slice(34, -1),
+        imagen: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + this.pokemons[i].pokemon.url.slice(34, -1) + '.png'
+      });
+    }
+  }
+
+  loadDataPokemon(id) {
+    this.peticion.id(id).subscribe(data => {
+      this.pokemondata = data;
+
+      this.cargarModal(this.pokemondata);
+    });
+  }
+
+  cargarModal(datos) {
+    this.nombreModal = datos.name;
+    console.log(datos);
+    this.imagenModal = datos.sprites.front_default;
+    this.cargado_modal = true;
+  }
+  cambiar_cargado_modal() {
+    this.cargado_modal = false;
   }
 }

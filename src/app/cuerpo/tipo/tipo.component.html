@@ -25,9 +25,38 @@
     </div>
   </div>
   <div class="row lista">
-    <li *ngFor="let pokemon of pokemons">
-      <a data-toggle="modal" data-target="#exampleModalCenter">
-        <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.pokemon.url.slice(34, -1)}}.png' alt="">
+    <li *ngFor="let pokemon of array_pokemons">
+      <a data-toggle="modal" data-target="#exampleModalCenter" (click)="loadDataPokemon(pokemon.id)">
+        <img src="{{pokemon.imagen}}" alt="">
       </a>
+  </div>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+       aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div *ngIf="!cargado_modal" class="text-center">
+        <img src="https://78.media.tumblr.com/81fe86f8dabd50c5547e86645ad66ead/tumblr_nemzf0zzgG1s2i16to1_500.gif"
+             alt="">
+      </div>
+      <div *ngIf="cargado_modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{nombreModal}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="{{imagenModal}}" alt="" class="text-center">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cambiar_cargado_modal()">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/pokemon/'+nombreModal]" (click)="cambiar_cargado_modal()">
+              ir a pokedex
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
